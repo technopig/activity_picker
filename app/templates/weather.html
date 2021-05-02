@@ -1,0 +1,13 @@
+<html>
+    <head>
+        {% if forecast_location %}
+        <title>{{ forecast_location }} - Weather</title>
+        {% else %}
+        <title> Weather </title>
+        {% endif %}
+    </head>
+    <body>
+        <h1> Temps: </h1>
+        {{ temps }}
+    </body>
+</html>

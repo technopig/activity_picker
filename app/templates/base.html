@@ -1,0 +1,25 @@
+{% extends 'forecasts.html' %}
+
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Activity Picker</title>
+        {% else %}
+        <title> Welcome to the Activity Picker </title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+        <table>
+            <tr>
+                <th> Type </th>
+                <th> Location </th>
+                <th> Value (w/units) </th>
+            </tr>
+            {% block boulder_weather %}{% endblock %}
+            <!-- {% block eldora_weather %}{% endblock %}
+            {% block boulder_water %}{% endblock %}
+            {% block avalanche %}{% endblock %} -->
+        </table>
+    </body>
+</html>

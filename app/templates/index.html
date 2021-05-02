@@ -1,8 +1,34 @@
 <html>
     <head>
+        {% if title %}
         <title>{{ title }} - Activity Picker</title>
+        {% else %}
+        <title> Welcome to the Activity Picker </title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
     <body>
         <h1>Hello, {{ user.username }}!</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th> Location </th>
+                    <th> Type </th>
+                    <th> Value (w/units) </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cast in forecasts %}
+                <tr>
+                    <td> {{ cast.location }} </td>
+                    <td> {{ cast.type }} </td>
+                    {% autoescape false %}
+                    <td> {{ cast.value }} </td>
+                    {% endautoescape %}
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </body>
 </html>
