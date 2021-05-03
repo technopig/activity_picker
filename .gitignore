@@ -2,3 +2,4 @@ venv/
 .ipynb_checkpoints/
 __pychache__/*
 app/__pycache__/
+.DS_Store

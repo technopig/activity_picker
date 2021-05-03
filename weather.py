@@ -39,8 +39,12 @@ def get_weather(coordinates, loc_name):
     # return {'temps': temps, 'winds': winds}
     return forecast
 
+
 if __name__ == '__main__':
-    BOULDER_URL = API_URL + BOULDER_COORDINATES
     BOULDER_COORDINATES = "40.0338,-105.2561"
-    abc = get_weather(BOULDER_COORDINATES)
+    ELDORA_COORDINATES = "39.93646991379455,-105.58600635354678"
+    BOULDER_URL = API_URL + BOULDER_COORDINATES
+    abc = get_weather(BOULDER_COORDINATES, 'boulder')
     print(abc)
+    bcd = get_weather(ELDORA_COORDINATES, 'eldora')
+    print(bcd)
