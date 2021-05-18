@@ -7,7 +7,7 @@ import logging
 import json_log_formatter
 import time
 
-SLEEP_DELAY = 1
+SLEEP_DELAY = 0
 
 formatter = json_log_formatter.JSONFormatter()
 
