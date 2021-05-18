@@ -4,3 +4,4 @@ __pychache__/*
 app/__pycache__/
 .DS_Store
 __pycache__/
+*.log
