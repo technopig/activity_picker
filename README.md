@@ -10,6 +10,12 @@ The objective is to create a `Flask` application that can serve up a simple sugg
 1. Pull and process data to assign each activity a score
 1. *DISPLAY HIGHEST SCORING ACTIVITY*
 
+## Setup
+Execute
+```
+DD_VERSION="1.5" DD_SERVICE="activity_picker" DD_ENV="macbookpro" DD_LOGS_INJECTION=true DD_TRACE_SAMPLE_RATE="1" DD_PROFILING_ENABLED=true ddtrace-run flask run --port 5016
+```
+
 # Activities
 - Mountain Biking
 - Hiking
