@@ -5,7 +5,10 @@ from water_gauge import get_cfs_tomorrow
 from avy import get_avy_frontrange
 import logging
 import json_log_formatter
+<<<<<<< HEAD
 import random
+=======
+>>>>>>> 0441583025b85b61261e1d16eff7f492357ebfd5
 
 formatter = json_log_formatter.JSONFormatter()
 
@@ -23,6 +26,7 @@ def index():
     user = {
         'username': 'Sam'
     }
+<<<<<<< HEAD
     if random.randint(1,1000) < 50:
         raise Exception("I am a fake error.")
         logger.error('Fake error encountered.')
@@ -42,6 +46,22 @@ def index():
         forecasts.append(get_avy_frontrange())
         logger.info('Got Avy info', extra={'location': 'Front Range', 'value': forecasts[len(forecasts)-1]})
         return render_template('index.html', user=user, forecasts=forecasts)
+=======
+    forecasts = []
+    # boulder_forecast =
+    forecasts.append(get_weather("40.0338,-105.2561", "Boulder"))
+    logger.info('Got weather', extra={'location': 'Boulder', 'value': forecasts[len(forecasts)-1]})
+    # eldora_forecast =
+    forecasts.append(get_weather("39.93646991379455,-105.58600635354678", "Eldora"))
+    logger.info('Got weather', extra={'location': 'Eldora', 'value': forecasts[len(forecasts)-1]})
+    # water_info =
+    forecasts.append(get_cfs_tomorrow("06730200", "Boulder Creek"))
+    logger.info('Got water info', extra={'location': 'Boulder Creek', 'value': forecasts[len(forecasts)-1]})
+    # avy_info =
+    forecasts.append(get_avy_frontrange())
+    logger.info('Got Avy info', extra={'location': 'Front Range', 'value': forecasts[len(forecasts)-1]})
+    return render_template('index.html', user=user, forecasts=forecasts)
+>>>>>>> 0441583025b85b61261e1d16eff7f492357ebfd5
 
 #
 # @app.route('/weather')
